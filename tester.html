@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: rgb(53, 50, 50);">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tester Objects</title>
+</head>
+
+<body>
+    <script>
+
+        const people = [
+            {
+                name: "Carly",
+                yearOfBirth: 2018,
+            },
+            {
+                name: "Ray",
+                yearOfBirth: 1962,
+                yearOfDeath: 2011,
+            },
+            {
+                name: "Jane",
+                yearOfBirth: 1912,
+                yearOfDeath: 1941,
+            },
+        ]
+
+        const findTheOldest = function () {
+            for (const person of people) {
+                if (!person.yearOfDeath) {
+                    const thisYear = new Date().getFullYear();
+                    person.age = thisYear - person.yearOfBirth;
+                } else {
+                    person.age = person.yearOfDeath - person.yearOfBirth;
+                }
+            }
+
+            return people.sort((a, b) => b.age - a.age)[0];
+        };
+
+        console.log(findTheOldest(people));
+
+
+
+
+
+    </script>
+</body>
+
+</html>

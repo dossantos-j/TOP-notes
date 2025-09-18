@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // An empty object can be created using one of two syntaxes:
+
+        let user = new Object(); // "object constructor" syntax
+        let user = {};  // "object literal" syntax
+
+
+        // We can put properties into {object} as “key: value” pairs:
+
+        let user = {     // an object
+            name: "John",  // by key "name" store value "John"
+            age: 30        // by key "age" store value 30
+        };
+
+
+        // get property values of the object:
+
+        alert(user.name); // John
+        alert(user.age); // 30
+
+
+        // To remove a property, we can use the delete operator:
+
+        delete user.age;
+
+        // property value shorthand
+        //making a property from a variable is so common, that there’s a special property value shorthand to make it shorter
+
+        function makeUser(name, age) {
+            return {
+                name: name,
+                age: age,
+            };
+        }
+        //same as
+        function makeUser(name, age) {
+            return {
+                name,
+                age,
+            };
+        }
+
+        // Square brackets notation works with any string:
+
+        user["likes birds"] = "yes";
+        alert(user["likes birds"]);
+
+        // check if a property with the given key exists:
+        "key" in obj
+        
+        // Property value shorthand
+
+        function makeDog(name, breed) {
+            return {
+                name,
+                // or
+                breed: breed,
+            };
+        }
+
+        let dog = makeDog("Buster", "Cocker Spaniel");
+
+        // iterate over an object / do someting for each of object's keys
+
+        // for every key, alert. Can be used to input to page.
+        for (let key in dog) {
+            alert( key + ": " + dog[key]);
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
